@@ -1,0 +1,47 @@
+normalized_LTL_formula,count
+G(prop & prop & prop),23672
+G(prop | prop | prop),23616
+G((prop | prop) -> F(prop | prop)),20082
+G((prop & prop) -> F(prop | prop)),19464
+G((prop | prop) -> F(prop & prop)),19422
+G((prop & prop) -> F(prop & prop)),18584
+G(prop -> G(prop -> Fprop)),10367
+F(prop | prop | prop),8479
+F(prop & prop & prop),8452
+G!(prop | prop | prop),6937
+G!(prop & prop & prop),6610
+G!(prop | prop) | F((prop | prop) & F(prop & prop)),3338
+G!(prop & prop) | F(prop & prop & F(prop | prop)),3327
+G!(prop | prop) | F((prop | prop) & F(prop | prop)),3322
+G!(prop & prop) | F(prop & prop & F(prop & prop)),3260
+G((prop & prop) -> G!(prop & prop)),1188
+G((prop | prop) -> G(prop | prop)),1019
+G((prop & prop) -> G!(prop | prop)),837
+G((prop | prop) -> G(prop & prop)),835
+G((prop | prop) -> G!(prop & prop)),834
+G((prop & prop) -> G(prop | prop)),832
+G((prop & prop) -> G(prop & prop)),673
+G((prop | prop) -> G!(prop | prop)),595
+G(prop | prop),546
+G(prop & prop),514
+G(prop -> F(prop | prop)),496
+G((prop | prop) -> Fprop),495
+G((prop & prop) -> Fprop),452
+G(prop -> F(prop & prop)),447
+F(prop & prop),179
+F(prop | prop),157
+G!(prop | prop) | F((prop | prop) & Fprop),151
+G!prop | F(prop & F(prop | prop)),144
+G!(prop & prop) | F(prop & prop & Fprop),136
+G!(prop | prop),135
+G!(prop & prop),134
+G!prop | F(prop & F(prop & prop)),134
+G((prop | prop) -> Gprop),27
+G(prop -> G(prop | prop)),26
+G(prop -> G(prop & prop)),22
+G((prop & prop) -> Gprop),20
+Gprop,15
+G(prop -> Fprop),12
+G!prop | F(prop & Fprop),6
+Fprop,5
+G!prop,2

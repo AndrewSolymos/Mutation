@@ -1,0 +1,35 @@
+normalized_LTL_formula,count
+G(!(prop & prop) -> Fprop),1063
+G((prop & Xprop) -> XXprop),976
+G((prop <-> prop) -> (prop <-> prop)),974
+G(prop -> Fprop) -> GFprop,933
+prop -> X((prop U prop) | Gprop),924
+!G!(prop & Xprop),843
+FG!prop,828
+Gprop,805
+G!prop,684
+F!prop,652
+G(prop & prop),516
+G!(prop & prop),500
+F(prop & prop),493
+G(prop -> Fprop),492
+Fprop & Fprop,296
+G(prop | prop),282
+G(prop -> prop),272
+G(prop <-> Xprop),268
+GFprop -> GFprop,262
+G(prop -> XFprop),259
+G(prop -> XG!prop),257
+G(prop -> (prop | Xprop)),252
+prop U GFprop,250
+F(prop | prop),249
+GFprop | GFprop,248
+GFprop | Xprop,248
+G!(prop & prop) & G(prop | prop),244
+prop U prop,244
+G(prop -> XXXprop),242
+(prop U prop) | Gprop,233
+G(prop -> Xprop),212
+!prop U prop,188
+Fprop -> (!prop U (!prop & prop)),137
+Fprop -> (!prop U (prop & !prop)),128

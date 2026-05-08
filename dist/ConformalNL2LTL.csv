@@ -1,0 +1,59 @@
+normalized_LTL_formula,count
+F(prop & F(prop & F(prop & prop))),111
+G!prop,65
+FGprop,55
+!prop U prop,40
+F(prop & prop),35
+prop U prop,30
+(!prop U prop) & F(prop & F(prop & F(prop & prop))),30
+prop U (prop & prop),30
+(!prop U prop) & F(prop & prop),28
+G!prop & F(prop & prop),26
+GF(prop & prop),25
+GF(prop & F(prop & F(prop & prop))),25
+Gprop,25
+GFprop & GF(prop & F(prop & F(prop & prop))),20
+GFprop,20
+F(prop & prop & Gprop),20
+prop U (prop & F(prop & F(prop & prop))),20
+GFprop & GF(prop & prop),20
+F(prop & prop & F(prop & Gprop)),20
+F(prop & F(prop & F(prop & Gprop))),19
+F(prop & F(prop & prop)),16
+GF(prop & F(prop & F(prop & prop))) & GFprop,16
+Fprop & G!prop,15
+Gprop & F(prop & F(prop & F(prop & prop))),15
+GF(prop & prop) & GFprop,15
+F(prop & prop) & G!prop,14
+GFprop & F(prop & F(prop & F(prop & prop))),14
+F(prop & F(prop & Gprop)),11
+F(prop & F(prop & F(prop & prop))) & G!prop,11
+F(prop & Fprop),10
+G!(prop | prop),10
+G!prop & F(prop & F(prop & F(prop & prop))),10
+G!prop & Fprop,10
+GFprop & Fprop,10
+(prop U prop) & F(prop & F(prop & F(prop & prop))),10
+G!(prop & prop),10
+GF(prop & prop) & G!prop,10
+prop U (prop & prop & F(prop & Gprop)),10
+!prop U (prop & F(prop & F(prop & prop))),10
+Gprop & GF(prop & prop),10
+F(prop & prop) & (!prop U prop),9
+FGprop & (!prop U prop),8
+!prop U (prop & prop),7
+(!prop U prop) & FGprop,6
+F(prop & F(prop & F(prop & prop))) & (!prop U prop),5
+F(prop & F(prop & F(prop & prop & prop))),5
+F(prop & F(prop & prop & Gprop)),5
+Fprop,5
+Gprop & GF(prop & F(prop & F(prop & prop))),5
+(!prop U prop) & F(prop & Gprop),5
+F(prop & prop) & Gprop,5
+GF(prop & prop) & (!prop U prop),5
+G!prop & GF(prop & prop),5
+(!prop U prop) & Fprop,5
+GF(prop & prop) & GF(prop & prop),5
+GF(prop & prop) & GF(prop & F(prop & F(prop & prop))),5
+F(prop & F(prop & F(prop & prop))) & F(prop & Gprop),5
+G!prop & F(prop & prop & F(prop & prop)),4

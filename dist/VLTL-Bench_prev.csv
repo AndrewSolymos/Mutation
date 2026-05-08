@@ -1,0 +1,175 @@
+normalized_LTL_formula,count
+F(prop & Fprop),4263
+Fprop & G!prop,3604
+F((prop | prop) & Fprop),1599
+Fprop | Fprop,967
+prop | Fprop,854
+Fprop,800
+Fprop & Fprop,640
+prop & Fprop,521
+Fprop U Fprop,176
+Fprop -> Fprop,170
+prop | prop,156
+prop & prop,93
+prop U Fprop,90
+prop -> Fprop,90
+F(prop & F(prop & F(prop & prop))),86
+Fprop -> prop,85
+Fprop U prop,81
+Fprop | G!prop,78
+Gprop | Fprop,69
+G!prop & Fprop,65
+G!prop | Fprop,65
+prop | G!prop,65
+G!prop,54
+prop U prop,48
+prop & G!prop,47
+GFprop | Fprop,44
+prop | Gprop,39
+Fprop | GFprop,39
+FGprop,35
+prop & Gprop,35
+Gprop & Fprop,34
+prop -> prop,34
+prop | GFprop,32
+!prop | Fprop,31
+!prop U prop,30
+Fprop | Gprop,30
+Fprop & Gprop,28
+Gprop,26
+GFprop & Fprop,26
+!prop & Fprop,24
+prop U (prop & prop),23
+GF(prop & F(prop & F(prop & prop))),22
+prop,22
+F(prop & prop),21
+Fprop & GFprop,21
+(!prop U prop) & F(prop & prop),20
+prop & GFprop,19
+F(prop & prop & F(prop & Gprop)),18
+G!prop & F(prop & prop),18
+(!prop U prop) & F(prop & F(prop & F(prop & prop))),17
+GF(prop & prop),16
+G!prop U Fprop,15
+G!prop -> Fprop,15
+prop U (prop & F(prop & F(prop & prop))),14
+GFprop & GF(prop & prop),14
+GF(prop & prop) & GFprop,14
+Gprop & F(prop & F(prop & F(prop & prop))),13
+GFprop,13
+F(prop & prop & Gprop),13
+Fprop U G!prop,13
+GFprop & GF(prop & F(prop & F(prop & prop))),12
+Gprop -> Fprop,12
+Fprop -> G!prop,12
+F(prop & prop) & G!prop,11
+Gprop U Fprop,11
+F(prop & F(prop & prop)),10
+F(prop & F(prop & F(prop & prop))) & G!prop,10
+F(prop & F(prop & F(prop & Gprop))),10
+G!prop -> prop,10
+1,10
+GF(prop & F(prop & F(prop & prop))) & GFprop,9
+Gprop & GF(prop & prop),9
+GFprop & F(prop & F(prop & F(prop & prop))),9
+prop U (prop & prop & F(prop & Gprop)),9
+G!(prop | prop),8
+(prop U prop) & F(prop & F(prop & F(prop & prop))),8
+GFprop -> Fprop,8
+prop U G!prop,8
+!prop U (prop & F(prop & F(prop & prop))),7
+G!prop & F(prop & F(prop & F(prop & prop))),7
+GF(prop & prop) & G!prop,7
+F(prop & F(prop & Gprop)),7
+FGprop & (!prop U prop),7
+!Fprop & Fprop,7
+!prop U Fprop,7
+prop | !prop,7
+G!(prop & prop),6
+F(prop & prop) & (!prop U prop),6
+GFprop U Fprop,6
+!prop | prop,6
+GFprop U prop,6
+Gprop -> prop,6
+prop -> G!prop,6
+GFprop -> prop,6
+"F(prop & F(""prop "" & prop & Gprop))",5
+(!prop U prop) & FGprop,5
+!prop & prop,5
+Fprop U GFprop,5
+Fprop -> Gprop,5
+Fprop -> GFprop,5
+prop & !prop,5
+Fprop & !Fprop,5
+Fprop U Gprop,5
+!prop U (prop & prop),4
+F(prop & F(prop & F(prop & prop))) & (!prop U prop),4
+F(prop & F(prop & F(prop & prop))) & F(prop & Gprop),4
+Fprop -> !prop,4
+Gprop | GFprop,4
+Fprop | !Fprop,4
+!Fprop | Fprop,4
+Gprop & GF(prop & F(prop & F(prop & prop))),3
+G!prop & F(prop & prop & F(prop & prop)),3
+G!prop & GF(prop & prop),3
+Gprop | G!prop,3
+G!prop | Gprop,3
+prop | !Fprop,3
+G!prop U prop,3
+G!prop & Gprop,3
+!prop -> Fprop,3
+GFprop & G!prop,3
+prop U GFprop,3
+prop U !prop,3
+!prop & Gprop,3
+Gprop | Gprop,3
+!prop | Gprop,3
+prop -> GFprop,3
+F(prop & prop) & Gprop,2
+F(prop & F(prop & F(prop & prop & prop))),2
+(!prop U prop) & F(prop & Gprop),2
+GF(prop & prop) & GF(prop & prop),2
+GF(prop & prop) & GF(prop & F(prop & F(prop & prop))),2
+(!prop U prop) & Fprop,2
+!prop -> prop,2
+prop U Gprop,2
+GFprop | G!prop,2
+GFprop & Gprop,2
+Gprop U prop,2
+Fprop U !Fprop,2
+prop -> !prop,2
+!prop | GFprop,2
+G!prop & G!prop,2
+Gprop U !prop,2
+!prop & GFprop,2
+!prop | G!prop,2
+Gprop & Gprop,2
+G!prop | G!prop,2
+Gprop & G!prop,2
+G!prop | GFprop,2
+!Fprop & GFprop,2
+Gprop -> Gprop,1
+GFprop -> GFprop,1
+G!prop & GFprop,1
+G!prop -> GFprop,1
+prop U !Fprop,1
+!prop,1
+Fprop U !prop,1
+G!prop U !prop,1
+"G!prop -> G!""prop(apple)""",1
+G!prop U Gprop,1
+Gprop -> GFprop,1
+!Fprop -> Fprop,1
+GFprop U Gprop,1
+prop -> Gprop,1
+!prop & !prop,1
+!Fprop -> prop,1
+prop & !Fprop,1
+Fprop -> !Fprop,1
+Gprop & GFprop,1
+GFprop & GFprop,1
+GFprop -> Gprop,1
+G!prop | !Fprop,1
+!prop & G!prop,1
+Gprop & !Fprop,1
+"G!prop & G!""prop(orange)""",1
