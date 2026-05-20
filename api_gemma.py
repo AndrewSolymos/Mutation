@@ -189,7 +189,7 @@ prompts = ["BASIC", "ARTEMIS" , "ADARULE"]
 
 
 
-file_input="/home/andris/workwork/Mutation/Batch9/final_df.csv"
+file_input="./Batch9/final_df.csv"
 model = "google/gemma-4-31B-it"
 
 

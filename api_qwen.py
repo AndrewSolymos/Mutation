@@ -189,7 +189,7 @@ prompts = ["BASIC", "ARTEMIS" , "ADARULE"]
 
 
 
-file_input="/home/andris/workwork/Mutation/Batch9/final_df.csv"
+file_input="./Batch9/final_df.csv"
 model = "Qwen/Qwen3.5-27B"
 
 
