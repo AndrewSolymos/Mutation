@@ -212,13 +212,13 @@ for iii in [3,4,5]:
     model_filename = model.replace("/","_")
     index_set = set()
 
-    if os.path.exists(current_tempOut+f"/data_{model_filename}_{prompt}.csv"):
+    if os.path.exists("tempOut/"+f"/data_{model_filename}_{prompt}.csv"):
         try:
             index_set = set(pd.read_csv(f"output/data_{model_filename}_{prompt}.csv", skiprows=1, header=None)['Index'].tolist())
         except:
             index_set = set()
     else:
-        with open(current_tempOut+f"data_{model_filename}_{prompt}.csv", "w", newline="", encoding="utf-8") as g:
+        with open("tempOut/"+f"data_{model_filename}_{prompt}.csv", "w", newline="", encoding="utf-8") as g:
             writer = csv.DictWriter(
                 g,
                 fieldnames=["Index", "Requirement", "Ground Truth", "Response"],
@@ -252,7 +252,8 @@ for iii in [3,4,5]:
 
         equivalent = semantically_equivalent(ground_truth, model_response)
 
-
+        print(f"{ind}\n")
+        
         with open(current_tempOut+"output_print.txt", "a", encoding="utf-8") as f:
             print(
                 f"  Index: {ind}\n"
@@ -280,7 +281,7 @@ for iii in [3,4,5]:
                     }
                 )
 
-                with open(current_tempOut+f"data_{model_filename}_{prompt}.csv", "a", newline="", encoding="utf-8") as g:
+                with open("tempOut/"+f"data_{model_filename}_{prompt}.csv", "a", newline="", encoding="utf-8") as g:
                     writer = csv.DictWriter(
                         g,
                         fieldnames=["Index", "Requirement", "Ground Truth", "Response"],
