@@ -28,7 +28,7 @@ import json
 timestamp = int(time.time())
 from pathlib import Path
 current_tempOut = Path("tempOut/"+str(timestamp))
-
+print(timestamp)
 current_tempOut.mkdir()
 current_tempOut = str(current_tempOut)+"/"
 INSTRUCTION = """
@@ -244,7 +244,7 @@ for iii in [3,4,5]:
             if prompt == "ADARULE":
                 model_response = model_response.replace("So the final LTL translation is: ", "").replace(".FINISH", "").strip()
             if prompt == "ARTEMIS":    
-                pass
+                model_response = ask_chatgpt(client, model, prompt, requirement, atomic_proposition)
         elif model == "qwen":
             model_response = ask_chatgpt(client, model, prompt, requirement, atomic_proposition)
         elif model == "codellama":
@@ -252,8 +252,8 @@ for iii in [3,4,5]:
 
         equivalent = semantically_equivalent(ground_truth, model_response)
 
-        print(f"{ind}\n")
-        
+        print(f"{ind}")
+
         with open(current_tempOut+"output_print.txt", "a", encoding="utf-8") as f:
             print(
                 f"  Index: {ind}\n"
