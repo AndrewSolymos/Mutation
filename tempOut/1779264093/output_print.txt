@@ -1,0 +1,162 @@
+  Index: 5991
+  Requirement: If photo injured_person ever holds, avoid the impending_gas_leak must have held beforehand.
+  Ground Truth: F photo_injured_person -> (!photo_injured_person U (avoid_impending_gas_leak & !photo_injured_person))
+  Response:     G(photo_injured_person -> (F avoid_impending_gas_leak V photo_injured_person))
+  Equivalent:     False
+
+  Index: 5992
+  Requirement: For all time (prop_1) is true, and (prop_3) is equivalent to (prop_2) .
+  Ground Truth: (prop_2 <-> prop_3) & G prop_1
+  Response:     G(prop_1 & (prop_3 <-> prop_2))
+  Equivalent:     False
+
+  Index: 5993
+  Requirement: Whenever get_help holds, idle holds exactly three steps later.
+  Ground Truth: G(get_help -> XXX idle)
+  Response:     G(get_help -> X X X idle)
+  Equivalent:     True
+
+  Index: 5994
+  Requirement: ( prop_1 ) or when possible ( prop_2 )
+  Ground Truth: prop_1 | F prop_2
+  Response:     prop_1 | F prop_2
+  Equivalent:     True
+
+  Index: 5995
+  Requirement: never drop pear and put_in bin
+  Ground Truth: put_in_bin & G!drop_pear
+  Response:     G(!(drop_pear & put_in_bin))
+  Equivalent:     False
+
+  Index: 5996
+  Requirement: ( prop_1 ) and when possible ( prop_2 )
+  Ground Truth: prop_1 & F prop_2
+  Response:     prop_1 & GF prop_2
+  Equivalent:     False
+
+  Index: 5997
+  Requirement: Start by obtaining box 2 from office 4 and make sure it is delivered to house 1 afterward
+  Ground Truth: F(office_4 & F(p_box_2 & F(house_1 & pd)))
+  Response:     F(pd & office_4 & p_box_2) & F(F(pd & office_4 & p_box_2) -> F(pd & house_1 & p_box_2))
+  Equivalent:     False
+
+  Index: 5998
+  Requirement: at some time ( prop_1 ) and at some time ( prop_2 )
+  Ground Truth: F(prop_1 & F prop_2)
+  Response:     F prop_1 & F prop_2
+  Equivalent:     False
+
+  Index: 5999
+  Requirement: ( prop_1 ) and repeatedly ( prop_2 )
+  Ground Truth: prop_1 & GF prop_2
+  Response:     prop_1 & GF prop_2
+  Equivalent:     True
+
+  Index: 6000
+  Requirement: Continuously take pictures of landmark 21 at regular intervals
+  Ground Truth: GF(landmark_21 & photo)
+  Response:     G(photo & landmark_21)
+  Equivalent:     False
+
+  Index: 6001
+  Requirement: sooner or later a sensor captures data, a table has been moved and the bridge closes
+  Ground Truth: F(bridge_closes & sensor_captures_data & table_has_been_moved)
+  Response:     F(sensor_captures_data & table_has_been_moved & bridge_closes)
+  Equivalent:     True
+
+  Index: 6002
+  Requirement: Pick up the donut holds at all times.
+  Ground Truth: G pickup_donut
+  Response:     G pickup_donut
+  Equivalent:     True
+
+  Index: 6003
+  Requirement: Globally , everytime when ( prop_1 ) then in response ( prop_2 ) or at the same time ( prop_3 ) .
+  Ground Truth: G(prop_1 -> (prop_2 | prop_3))
+  Response:     G(prop_1 -> (F prop_2 | prop_3))
+  Equivalent:     False
+
+  Index: 6004
+  Requirement: ( prop_1 ) or at some time ( prop_2 )
+  Ground Truth: prop_1 | F prop_2
+  Response:     prop_1 | F prop_2
+  Equivalent:     True
+
+  Index: 6005
+  Requirement: While ( prop_1 ) or ( prop_2 ) then all of the following conditions hold : for each moment in the future until the execution ends , there needs to exist a time in the future before the execution ends , at which the event that ( prop_3 ) will have to get detected .
+  Ground Truth: G((prop_1 | prop_2) -> GF prop_3)
+  Response:     G((prop_1 | prop_2) -> G F prop_3)
+  Equivalent:     True
+
+  Index: 6006
+  Requirement: when possible ( prop_1 ) until repeatedly ( prop_2 )
+  Ground Truth: F(prop_1 U GF prop_2)
+  Response:     GF(prop_1) U GF(prop_2)
+  Equivalent:     True
+
+  Index: 6007
+  Requirement: as a house is built or a sensor captures data, it will happen that a manager handles requests and a table is brown
+  Ground Truth: G((house_is_built | sensor_captures_data) -> F(manager_handles_requests & table_is_brown))
+  Response:     (house_is_built | sensor_captures_data) -> F(manager_handles_requests & table_is_brown)
+  Equivalent:     False
+
+  Index: 6008
+  Requirement: whenever ( prop_1 ) or repeatedly ( prop_2 )
+  Ground Truth: F(prop_1 | GF prop_2)
+  Response:     G(prop_1 | GF prop_2)
+  Equivalent:     False
+
+  Index: 6009
+  Requirement: Pick up stack_4 from house_4 and at street_2 and stay there
+  Ground Truth: F(house_4 & F(p_stack_4 & F(street_2 & G street_2)))
+  Response:     F(p_stack_4 & house_4 & F(street_2 & G street_2))
+  Equivalent:     False
+
+  Index: 6010
+  Requirement: If (prop_3) implies (prop_1), then you should make (prop_2) happen .
+  Ground Truth: (prop_3 -> prop_1) -> F prop_2
+  Response:     (prop_3 -> prop_1) -> F prop_2
+  Equivalent:     True
+
+  Index: 6011
+  Requirement: always when both the engine stops and a manager collect claims then finally, the sensor captures data
+  Ground Truth: G((engine_stops & manager_collect_claims) -> F sensor_captures_data)
+  Response:     G((engine_stops & manager_collect_claims) -> F sensor_captures_data)
+  Equivalent:     True
+
+  Index: 6012
+  Requirement: In case that the transition action that ( prop_1 ) occurs , then in response simultaneously ( prop_2 ) .
+  Ground Truth: G(prop_1 -> prop_2)
+  Response:     G(prop_1 -> prop_2)
+  Equivalent:     True
+
+  Index: 6013
+  Requirement: when a motorbike has stopped then after the constructor instantiate objects, sooner or later the engine starts afterwards
+  Ground Truth: G(motorbike_has_stopped -> G(constructor_instantiate_objects -> F engine_starts))
+  Response:     G(motorbike_has_stopped -> G(constructor_instantiate_objects -> F engine_starts))
+  Equivalent:     True
+
+  Index: 6014
+  Requirement: avoid the yellow_room and enter the green_room through either the red or yellow_room
+  Ground Truth: F((red_room | yellow_room) & F green_room)
+  Response:     G(!yellow_room) & F((red_room | yellow_room) & X(green_room))
+  Equivalent:     False
+
+  Index: 6015
+  Requirement: (prop_1) or (prop_3). (prop_2) until (prop_4).
+  Ground Truth: (prop_1 | prop_3) & (prop_2 U prop_4)
+  Response:     (prop_1 | prop_3) & (prop_2 U prop_4)
+  Equivalent:     True
+
+  Index: 6016
+  Requirement: (prop_3) doesn't happen, and either (prop_2) or (prop_1) happens .
+  Ground Truth: !prop_3 & (prop_1 | prop_2)
+  Response:     (!prop_3) & (prop_2 | prop_1)
+  Equivalent:     True
+
+  Index: 6017
+  Requirement: If ( prop_3 ) then ( prop_4 ) , is equivalent to ( prop_1 ) , and also ( prop_2 ) .
+  Ground Truth: prop_2 & (prop_1 <-> (prop_3 -> prop_4))
+  Response:     ((prop_3 -> prop_4) <-> prop_1) & prop_2
+  Equivalent:     True
+

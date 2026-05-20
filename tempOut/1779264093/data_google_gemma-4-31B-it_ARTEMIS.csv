@@ -1,0 +1,13 @@
+Index,Requirement,Ground Truth,Response
+5991,"If photo injured_person ever holds, avoid the impending_gas_leak must have held beforehand.",F photo_injured_person -> (!photo_injured_person U (avoid_impending_gas_leak & !photo_injured_person)),G(photo_injured_person -> (F avoid_impending_gas_leak V photo_injured_person))
+5992,"For all time (prop_1) is true, and (prop_3) is equivalent to (prop_2) .",(prop_2 <-> prop_3) & G prop_1,G(prop_1 & (prop_3 <-> prop_2))
+5995,never drop pear and put_in bin,put_in_bin & G!drop_pear,G(!(drop_pear & put_in_bin))
+5996,( prop_1 ) and when possible ( prop_2 ),prop_1 & F prop_2,prop_1 & GF prop_2
+5997,Start by obtaining box 2 from office 4 and make sure it is delivered to house 1 afterward,F(office_4 & F(p_box_2 & F(house_1 & pd))),F(pd & office_4 & p_box_2) & F(F(pd & office_4 & p_box_2) -> F(pd & house_1 & p_box_2))
+5998,at some time ( prop_1 ) and at some time ( prop_2 ),F(prop_1 & F prop_2),F prop_1 & F prop_2
+6000,Continuously take pictures of landmark 21 at regular intervals,GF(landmark_21 & photo),G(photo & landmark_21)
+6003,"Globally , everytime when ( prop_1 ) then in response ( prop_2 ) or at the same time ( prop_3 ) .",G(prop_1 -> (prop_2 | prop_3)),G(prop_1 -> (F prop_2 | prop_3))
+6007,"as a house is built or a sensor captures data, it will happen that a manager handles requests and a table is brown",G((house_is_built | sensor_captures_data) -> F(manager_handles_requests & table_is_brown)),(house_is_built | sensor_captures_data) -> F(manager_handles_requests & table_is_brown)
+6008,whenever ( prop_1 ) or repeatedly ( prop_2 ),F(prop_1 | GF prop_2),G(prop_1 | GF prop_2)
+6009,Pick up stack_4 from house_4 and at street_2 and stay there,F(house_4 & F(p_stack_4 & F(street_2 & G street_2))),F(p_stack_4 & house_4 & F(street_2 & G street_2))
+6014,avoid the yellow_room and enter the green_room through either the red or yellow_room,F((red_room | yellow_room) & F green_room),G(!yellow_room) & F((red_room | yellow_room) & X(green_room))
