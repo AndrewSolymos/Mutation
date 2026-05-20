@@ -1,0 +1,154 @@
+Syntax error; excluding from accuracy:
+  Error:        
+>>> F get_near_flag & F be_in_house's_vicinity
+                                   ^
+syntax error, unexpected invalid token
+
+>>> F get_near_flag & F be_in_house's_vicinity
+                                   ^^^^^^^^^^^
+ignoring trailing garbage
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> F(!pd(p_traffic_cone_5, street_4) & F(pd(p_traffic_cone_5, intersection_6)))
+         ^
+syntax error, unexpected opening parenthesis
+
+>>> F(!pd(p_traffic_cone_5, street_4) & F(pd(p_traffic_cone_5, intersection_6)))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ignoring this
+
+>>> F(!pd(p_traffic_cone_5, street_4) & F(pd(p_traffic_cone_5, intersection_6)))
+                                            ^
+syntax error, unexpected opening parenthesis
+
+>>> F(!pd(p_traffic_cone_5, street_4) & F(pd(p_traffic_cone_5, intersection_6)))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ignoring this
+
+>>> F(!pd(p_traffic_cone_5, street_4) & F(pd(p_traffic_cone_5, intersection_6)))
+                                                                              ^^
+ignoring trailing garbage
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G(photo_motorcycle_northwest_5th_avenue -> (F^{-1} get_help))
+                                                 ^
+syntax error, unexpected xor operator
+
+>>> G(photo_motorcycle_northwest_5th_avenue -> (F^{-1} get_help))
+                                                ^
+missing right operand for "sometimes operator"
+
+>>> G(photo_motorcycle_northwest_5th_avenue -> (F^{-1} get_help))
+                                                  ^^^^
+treating this brace block as false
+
+>>> G(photo_motorcycle_northwest_5th_avenue -> (F^{-1} get_help))
+                                                       ^^^^^^^^
+ignoring this
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G!drop_orange & F be_in_house's_vicinity
+                                 ^
+syntax error, unexpected invalid token
+
+>>> G!drop_orange & F be_in_house's_vicinity
+                                 ^^^^^^^^^^^
+ignoring trailing garbage
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G(search_clock -> (F^-1 pickup_dog))
+                        ^
+syntax error, unexpected xor operator
+
+>>> G(search_clock -> (F^-1 pickup_dog))
+                       ^
+missing right operand for "sometimes operator"
+
+>>> G(search_clock -> (F^-1 pickup_dog))
+                        ^
+missing right operand for "xor operator"
+
+>>> G(search_clock -> (F^-1 pickup_dog))
+                         ^^^^^^^^^^^^^
+ignoring this
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> F got_to_house & F be_in_house's_vicinity
+                                  ^
+syntax error, unexpected invalid token
+
+>>> F got_to_house & F be_in_house's_vicinity
+                                  ^^^^^^^^^^^
+ignoring trailing garbage
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G(pickup_vase -> (F^{-1} idle))
+                       ^
+syntax error, unexpected xor operator
+
+>>> G(pickup_vase -> (F^{-1} idle))
+                      ^
+missing right operand for "sometimes operator"
+
+>>> G(pickup_vase -> (F^{-1} idle))
+                        ^^^^
+treating this brace block as false
+
+>>> G(pickup_vase -> (F^{-1} idle))
+                             ^^^^
+ignoring this
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G((prop_3 & prop_1) -> ! (X (prop_2 U (X (prop_2 U (X (prop_2 U (X !prop_2)))))))))
+                                                                                      ^
+syntax error, unexpected closing parenthesis
+
+>>> G((prop_3 & prop_1) -> ! (X (prop_2 U (X (prop_2 U (X (prop_2 U (X !prop_2)))))))))
+                                                                                      ^
+ignoring trailing garbage
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G(communicate_injured_hostile -> (F^{-1} get_help))
+                                       ^
+syntax error, unexpected xor operator
+
+>>> G(communicate_injured_hostile -> (F^{-1} get_help))
+                                      ^
+missing right operand for "sometimes operator"
+
+>>> G(communicate_injured_hostile -> (F^{-1} get_help))
+                                        ^^^^
+treating this brace block as false
+
+>>> G(communicate_injured_hostile -> (F^{-1} get_help))
+                                             ^^^^^^^^
+ignoring this
+
+
+Syntax error; excluding from accuracy:
+  Error:        
+>>> G hold_on_pear -> F be_in_house's_vicinity
+                                   ^
+syntax error, unexpected invalid token
+
+>>> G hold_on_pear -> F be_in_house's_vicinity
+                                   ^^^^^^^^^^^
+ignoring trailing garbage
+
+
