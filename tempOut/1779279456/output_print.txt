@@ -1084,3 +1084,273 @@
   Response:     G((prop_4 & prop_1) -> (prop_2 | G(!prop_3)))
   Equivalent:     False
 
+  Index: 6172
+  Requirement: Globally , when the transition action that ( prop_3 ) is detected , and ( prop_2 ) then the following condition is true : ( prop_1 ) .
+  Ground Truth: G((prop_2 & prop_3) -> prop_1)
+  Response:     G((prop_3 & prop_2) -> prop_1)
+  Equivalent:     True
+
+  Index: 6173
+  Requirement: If you observe (prop_1) and do (prop_2), then you should not do (prop_3) .
+  Ground Truth: (prop_1 & prop_2) -> !prop_3
+  Response:     G((prop_1 & prop_2) -> !prop_3)
+  Equivalent:     False
+
+  Index: 6174
+  Requirement: at some time contact flag or when possible touch tree
+  Ground Truth: F contact_flag | F touch_tree
+  Response:     F(contact_flag | touch_tree)
+  Equivalent:     True
+
+  Index: 6175
+  Requirement: Do not go to office 4 until you pick pass 6 as you deliver pass 6 from house 5 to office 4
+  Ground Truth: (!office_4 U p_pass_6) & F(house_5 & F(p_pass_6 & F(office_4 & pd)))
+  Response:     (!office_4) U p_pass_6
+  Equivalent:     False
+
+  Index: 6176
+  Requirement: Whenever ( prop_2 ) and ( prop_1 ) , then all of the following conditions hold : in the future before the execution ends without interruption ( prop_3 ) .
+  Ground Truth: G((prop_1 & prop_2) -> G prop_3)
+  Response:     G((prop_1 & prop_2) -> F prop_3)
+  Equivalent:     False
+
+  Index: 6177
+  Requirement: If at some point ( prop_2 ) or ( prop_4 ) is detected and this scenario continues to hold until ( prop_1 ) is detected , and ( prop_3 ) .
+  Ground Truth: prop_3 & ((prop_2 | prop_4) U prop_1)
+  Response:     F(((prop_2 | prop_4) & (prop_2 | prop_4) U prop_1) & prop_3)
+  Equivalent:     False
+
+  Index: 6178
+  Requirement: It is always the case that while ( prop_1 ) then all of the following conditions hold : there shall ultimately exist a certain time instant in the future before the simulation ends , at which for each time point during the coming 3 to 26 time units continuously ( prop_2 ) .
+  Ground Truth: G(prop_1 -> FG prop_2)
+  Response:     G(prop_1 -> F(X(prop_2 & X(prop_2 & X(prop_2)))))
+  Equivalent:     False
+
+  Index: 6179
+  Requirement: when possible obtain orange and always go_by trash can
+  Ground Truth: F obtain_orange & G go_by_trash_can
+  Response:     F(obtain_orange) & G(go_by_trash_can)
+  Equivalent:     True
+
+  Index: 6180
+  Requirement: Make sure that (prop_2) is always true, and either (prop_1) or (prop_3) should also happen.
+  Ground Truth: (prop_1 | prop_3) & G prop_2
+  Response:     G(prop_2) & F(prop_1 | prop_3)
+  Equivalent:     False
+
+  Index: 6181
+  Requirement: Go to street 5 and then go to building 2 and stay there
+  Ground Truth: F(street_5 & F(building_2 & G building_2))
+  Response:     F(street_5 & F(building_2 & G building_2))
+  Equivalent:     True
+
+  Index: 6182
+  Requirement: Call for help and idle will each happen at some point.
+  Ground Truth: F get_help & F idle
+  Response:     F(get_help) & F(idle)
+  Equivalent:     True
+
+  Index: 6183
+  Requirement: Globally , everytime when ( prop_1 ) , or ( prop_2 ) then all of the following conditions hold : ( prop_4 ) , or at the same time instant ( prop_3 ) .
+  Ground Truth: G((prop_1 | prop_2) -> (prop_3 | prop_4))
+  Response:     G((prop_1 | prop_2) -> (prop_4 | prop_3))
+  Equivalent:     True
+
+  Index: 6184
+  Requirement: whenever travel_to flag or at some time procure pear
+  Ground Truth: F travel_to_flag | F procure_pear
+  Response:     G(travel_to_flag) | F(procure_pear)
+  Equivalent:     False
+
+  Index: 6185
+  Requirement: Ensure you repeatedly transport crate_4 from warehouse_3 to store_9, and also periodically visit charger_3
+  Ground Truth: GF(warehouse_3 & F(p_crate_4 & F(pd & store_9))) & GF charger_3
+  Response:     GF(warehouse_3 & p_crate_4 & store_9) & GF(charger_3)
+  Equivalent:     False
+
+  Index: 6186
+  Requirement: after both a motorbike has started and a semaphore is red, it will not happen that either a sensor captures data or the escalator moves
+  Ground Truth: G((motorbike_has_started & semaphore_is_red) -> G!(escalator_moves | sensor_captures_data))
+  Response:     G((motorbike_has_started & semaphore_is_red) -> F(!(sensor_captures_data | escalator_moves)))
+  Equivalent:     False
+
+  Index: 6187
+  Requirement: ( prop_1 ) or never ( prop_2 )
+  Ground Truth: prop_1 | G!prop_2
+  Response:     prop_1 | G(!prop_2)
+  Equivalent:     True
+
+  Index: 6188
+  Requirement: If (prop_3) happens and continues until (prop_1), then (prop_2) should not happen .
+  Ground Truth: (prop_3 U prop_1) -> !prop_2
+  Response:     (prop_3 U prop_1) -> G(!prop_2)
+  Equivalent:     False
+
+  Index: 6189
+  Requirement: The robot must Please deliver the bed to the shelf and then get_help.
+  Ground Truth: deliver_bed_shelf U get_help
+  Response:     F(deliver_bed_shelf & F get_help)
+  Equivalent:     False
+
+  Index: 6190
+  Requirement: Either (prop_3) and (prop_4) happen together, or else (prop_2) or (prop_1) .
+  Ground Truth: prop_1 | prop_2 | (prop_3 & prop_4)
+  Response:     ((prop_3 & prop_4) | (prop_2 | prop_1))
+  Equivalent:     True
+
+  Index: 6191
+  Requirement: Always avoid entering house 1
+  Ground Truth: G!house_1
+  Response:     G(!house_1)
+  Equivalent:     True
+
+  Index: 6192
+  Requirement: The robot must always avoid calling for help.
+  Ground Truth: G!get_help
+  Response:     G(!get_help)
+  Equivalent:     True
+
+  Index: 6193
+  Requirement: Globally , whenever ( prop_3 ) and ( prop_1 ) then in response for each time point in the future until the execution ends , at a certain moment in the future before the end of the simulation ( prop_2 ) .
+  Ground Truth: G((prop_1 & prop_3) -> GF prop_2)
+  Response:     G((prop_3 & prop_1) -> G F prop_2)
+  Equivalent:     True
+
+  Index: 6194
+  Requirement: at some time ( prop_1 ) means that ( prop_2 )
+  Ground Truth: F prop_1 -> prop_2
+  Response:     F(prop_1) -> prop_2
+  Equivalent:     True
+
+  Index: 6195
+  Requirement: If (prop_3) is not the case, or do (prop_1) until you detect (prop_2) .
+  Ground Truth: !prop_3 | (prop_1 U prop_2)
+  Response:     (!prop_3) | (prop_1 U prop_2)
+  Equivalent:     True
+
+  Index: 6196
+  Requirement: Either ( prop_3 ) or ( prop_1 ) should happen at the same time , or else if ( prop_2 ) then ( prop_4 ) .
+  Ground Truth: prop_1 | prop_3 | (prop_2 -> prop_4)
+  Response:     (prop_3 & prop_1) | (prop_2 -> prop_4)
+  Equivalent:     False
+
+  Index: 6197
+  Requirement: under no condition both a bridge closes and the brake is released
+  Ground Truth: G!(brake_is_released & bridge_closes)
+  Response:     G(!(bridge_closes & brake_is_released))
+  Equivalent:     True
+
+  Index: 6198
+  Requirement: If (prop_2), then (prop_3), and keep doing so until (prop_1) is the same as (prop_4) .
+  Ground Truth: (prop_2 -> prop_3) U (prop_1 <-> prop_4)
+  Response:     G(prop_2 -> (prop_3 U (prop_1 <-> prop_4)))
+  Equivalent:     False
+
+  Index: 6199
+  Requirement: Remain still can only happen after handing over the dining_table to the loading_dock.
+  Ground Truth: !idle U deliver_dining_table_loading_dock
+  Response:     (!idle) U deliver_dining_table_loading_dock
+  Equivalent:     True
+
+  Index: 6200
+  Requirement: If at some point (prop_3) happens and implies (prop_1), then (prop_2) should not happen .
+  Ground Truth: (prop_3 -> prop_1) -> !prop_2
+  Response:     F(prop_3 & (prop_3 -> prop_1)) -> G(!prop_2)
+  Equivalent:     False
+
+  Index: 6201
+  Requirement: when forever ( prop_1 ) , at some time ( prop_2 )
+  Ground Truth: G prop_1 -> F prop_2
+  Response:     G(prop_1) -> F(prop_2)
+  Equivalent:     True
+
+  Index: 6202
+  Requirement: If record the car on west_7th_street happens infinitely often, then so does get_help.
+  Ground Truth: GF record_car_west_7th_street -> GF get_help
+  Response:     GF(record_car_west_7th_street) -> GF(get_help)
+  Equivalent:     True
+
+  Index: 6203
+  Requirement: whenever ( prop_1 ) until ( prop_2 )
+  Ground Truth: F(prop_1 U prop_2)
+  Response:     G(prop_1 U prop_2)
+  Equivalent:     False
+
+  Index: 6204
+  Requirement: always stay or grip apple
+  Ground Truth: grip_apple | G stay
+  Response:     G(stay | grip_apple)
+  Equivalent:     False
+
+  Index: 6205
+  Requirement: Our agent must eventually, avoid search the skateboard.
+  Ground Truth: F!search_skateboard
+  Response:     F(!search_skateboard)
+  Equivalent:     True
+
+  Index: 6206
+  Requirement: For all time (prop_3) should be true, and the scenario in which (prop_2) is equivalent to the scenario in which (prop_1) .
+  Ground Truth: (prop_1 <-> prop_2) & G prop_3
+  Response:     G(prop_3 & (prop_2 <-> prop_1))
+  Equivalent:     False
+
+  Index: 6207
+  Requirement: It is always the case that if ( prop_3 ) , or ( prop_1 ) , then the following condition is true : at the same moment ( prop_2 ) .
+  Ground Truth: G((prop_1 | prop_3) -> prop_2)
+  Response:     G((prop_3 | prop_1) -> prop_2)
+  Equivalent:     True
+
+  Index: 6208
+  Requirement: If (prop_2) and (prop_1), then (prop_3) should not happen .
+  Ground Truth: (prop_1 & prop_2) -> !prop_3
+  Response:     G((prop_1 & prop_2) -> !prop_3)
+  Equivalent:     False
+
+  Index: 6209
+  Requirement: For each time instant in the coming time units either ( prop_1 ) or ( prop_3 ) should be detected , as well as ( prop_2 ) .
+  Ground Truth: prop_2 & G(prop_1 | prop_3)
+  Response:     G((prop_1 | prop_3) & prop_2)
+  Equivalent:     False
+
+  Index: 6210
+  Requirement: If idle holds, then in the next step pickup the bed persists until picking up the sports_ball holds, or else pickup the bed holds forever.
+  Ground Truth: idle -> X((pickup_bed U pickup_sports_ball) | G pickup_bed)
+  Response:     G(idle -> (X(pickup_bed U pickup_sports_ball) | G(X pickup_bed)))
+  Equivalent:     False
+
+  Index: 6211
+  Requirement: In the case ( prop_1 ) , and ( prop_2 ) then the condition that ( prop_3 ) shall not be true .
+  Ground Truth: G((prop_1 & prop_2) -> !F prop_3)
+  Response:     G((prop_1 & prop_2) -> !prop_3)
+  Equivalent:     False
+
+  Index: 6212
+  Requirement: For all time, make sure (prop_2) happens, and detect when (prop_1) is equivalent to (prop_3) .
+  Ground Truth: (prop_1 <-> prop_3) & G prop_2
+  Response:     G(prop_2 & (prop_1 <-> prop_3))
+  Equivalent:     False
+
+  Index: 6213
+  Requirement: always have_in orange or whenever make_to flag
+  Ground Truth: G have_in_orange | F make_to_flag
+  Response:     G(have_in_orange | (make_to_flag -> have_in_orange))
+  Equivalent:     False
+
+  Index: 6214
+  Requirement: at any time an elevator falls or the elevator is open
+  Ground Truth: G(elevator_falls | elevator_is_open)
+  Response:     G(elevator_falls | elevator_is_open)
+  Equivalent:     True
+
+  Index: 6215
+  Requirement: first, eventually, a semaphore is green or the car starts, and then, sooner or later both an elevator is blocked and a train derails
+  Ground Truth: G!(car_starts | semaphore_is_green) | F((car_starts | semaphore_is_green) & F(elevator_is_blocked & train_derails))
+  Response:     F((semaphore_is_green | car_starts) & F(elevator_is_blocked & train_derails))
+  Equivalent:     False
+
+  Index: 6216
+  Requirement: at no time the elevator falls
+  Ground Truth: G!elevator_falls
+  Response:     G(!elevator_falls)
+  Equivalent:     True
+

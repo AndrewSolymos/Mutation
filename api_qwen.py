@@ -246,7 +246,7 @@ for iii in [3,4,5]:
             if prompt == "ARTEMIS":    
                 model_response = ask_chatgpt(client, model, prompt, requirement, atomic_proposition)
         elif model == "Qwen/Qwen3.5-27B":
-            client = OpenAI(base_url="http://127.0.0.1:8001/v1",api_key="dummy",)
+            client = OpenAI(base_url="http://127.0.0.1:8000/v1",api_key="dummy",)
             model_response = ask_chatgpt(client, model, prompt, requirement, atomic_proposition)
             if prompt == "ADARULE":
                 model_response = model_response.replace("So the final LTL translation is: ", "").replace(".FINISH", "").strip()
