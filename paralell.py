@@ -105,7 +105,7 @@ So the final LTL translation is: [LTL formula].FINISH
 
 model = "google/gemma-4-31B-it"
 
-DB_PATH = "experiment_results_gema.db"
+DB_PATH = "human_data_qwen.db"
 
 STALL_TIMEOUT_SECONDS = 600  
 
