@@ -232,7 +232,7 @@ def seed_experiments(data_points, prompt_types, temperatures):
             orig_nl = dp.get('Requirement', '')
             orig_ltl = dp.get('Ground Truth', '')
             try:
-                spot_ltl = spot.formula(orig_ltl)
+                spot_ltl = str(spot.formula(orig_ltl))
             except Exception as e:
                 print(f"Error occurred while processing Spot_LTL for experiment {exp_idx}: {e}")
                 spot_ltl = ''
