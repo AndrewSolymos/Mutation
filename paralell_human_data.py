@@ -275,7 +275,7 @@ def run_medium_duration_script(task):
     temp = task['temperature']
 
     output = []
-    client = OpenAI(base_url="http://127.0.0.1:8001/v1", api_key="dummy")
+    client = OpenAI(base_url="http://127.0.0.1:8000/v1", api_key="dummy")
 
     for retake in range(20):
         time.sleep(random.uniform(0.5, 1.5))  # Simulate processing time
