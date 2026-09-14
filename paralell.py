@@ -104,8 +104,9 @@ So the final LTL translation is: [LTL formula].FINISH
 """
 
 model = "google/gemma-4-31B-it"
-
+model = "Qwen/Qwen3.5-27B"
 DB_PATH = "human_data_qwen.db"
+
 
 STALL_TIMEOUT_SECONDS = 600  
 
