@@ -228,6 +228,7 @@ def seed_experiments(data_points, prompt_types, temperatures):
         for dp, pt, temp in itertools.product(data_points, prompt_types, temperatures):
             # Safe parsing from CSV keys
             exp_idx = int(dp['experiment_index'])
+            exp_idx = int(dp['experiment_index'])
             orig_nl = dp.get('Requirement', '')
             orig_ltl = dp.get('Ground Truth', '')
             try:
@@ -236,6 +237,7 @@ def seed_experiments(data_points, prompt_types, temperatures):
                 print(f"Error occurred while processing Spot_LTL for experiment {exp_idx}: {e}")
                 spot_ltl = ''
             aps = dp.get('Atomic Proposition', '')
+            
 
             conn.execute('''
                 INSERT OR IGNORE INTO experiments 
