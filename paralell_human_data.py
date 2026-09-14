@@ -104,8 +104,8 @@ So the final LTL translation is: [LTL formula].FINISH
 """
 
 model = "google/gemma-4-31B-it"
-# model = "Qwen/Qwen3.5-27B"
-DB_PATH = "human_data_gemma.db"
+model = "Qwen/Qwen3.5-27B"
+DB_PATH = "human_data_qwen.db"
 
 
 STALL_TIMEOUT_SECONDS = 600  
@@ -279,7 +279,7 @@ def run_medium_duration_script(task):
 
     for retake in range(20):
         time.sleep(random.uniform(0.5, 1.5))  # Simulate processing time
-        model_response = ask_chatgpt_gemma(client, model, prompt, requirement, atomic_proposition, temp)
+        model_response = ask_chatgpt_QWEN(client, model, prompt, requirement, atomic_proposition, temp)
         og_model_response = model_response
         
         if prompt == "ADARULE":
