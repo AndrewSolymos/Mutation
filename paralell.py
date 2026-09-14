@@ -268,11 +268,11 @@ def run_medium_duration_script(task):
     temp = task['temperature']
 
     output = []
-    client = OpenAI(base_url="http://127.0.0.1:8001/v1", api_key="dummy")
+    client = OpenAI(base_url="http://127.0.0.1:8000/v1", api_key="dummy")
 
     for retake in range(20):
         time.sleep(random.uniform(0.5, 1.5))  # Simulate processing time
-        model_response = ask_chatgpt_gemma(client, model, prompt, requirement, atomic_proposition, temp)
+        model_response = ask_chatgpt_QWEN(client, model, prompt, requirement, atomic_proposition, temp)
         og_model_response = model_response
         
         if prompt == "ADARULE":
@@ -360,17 +360,20 @@ def worker_process(worker_id):
 # ==========================================
 # 3. THE MULTI-CORE ORCHESTRATOR
 # ==========================================
-
+import os
 if __name__ == '__main__':
     setup_database()
     
     data_points = []
     # Make sure this path matches your directory setup
-    with open("Batch9/final_df_downsampled.csv", mode='r', encoding='utf-8') as file:
-        csv_reader = csv.DictReader(file, delimiter=';')
-        for row in csv_reader:
-            row['experiment_index'] = int(csv_reader.line_num)  # Ensure the index is an integer
-            data_points.append(row)
+    file_input="HumanDataProcessed/"
+    
+    for fajl in os.listdir(file_input):
+        with open(file_input+ fajl, mode='r', encoding='utf-8') as file:
+            csv_reader = csv.DictReader(file, delimiter=',')
+            for row in csv_reader:
+                row['experiment_index'] = int(csv_reader.line_num)  # Ensure the index is an integer
+                data_points.append(row)
 
     prompt_types = ["BASIC", "ARTEMIS", "ADARULE"]
     temperatures = [0.7]
