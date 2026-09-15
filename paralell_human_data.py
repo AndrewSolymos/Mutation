@@ -224,14 +224,14 @@ def seed_experiments(data_points, prompt_types, temperatures):
     """Maps CSV dictionaries cleanly into SQL columns, checking for duplicates."""
     with get_db_connection() as conn:
         conn.execute("BEGIN")
-        
+
         with get_db_connection() as conn:
             conn.execute("""
                 DELETE FROM experiments 
                 WHERE original_NL IS NULL 
                 OR TRIM(original_NL) = '';
             """)
-            conn.commit()
+            conn.execute("COMMIT")
         print("Cleared rows with empty requirements.")
         
         for dp, pt, temp in itertools.product(data_points, prompt_types, temperatures):

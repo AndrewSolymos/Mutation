@@ -6,7 +6,7 @@ Each waiting process will eventually enter its critical section,G(x1 -> F(x2)),�
 The first traffic light is infinitely often green,G(F(x1)),“Green” x1
 The traffic lights are never both green simultaneously,G(!(x1&x2)),“Green1” x1; “Green2” x2
 "If one light switches from red to green, the other switches from green to red",G ((x1 & X x2) -> (x3 & X x4)),“Red1’ : x1; “Green1” : x2; “Green2” : x3; “Red2’ : x4;
-a red phase must be preceded immediately by a yellow phase,G(x1 -> (Y(x2))),“Red’ : x1; “Yellow” : x2;
+a red phase must be preceded immediately by a yellow phase,G(x1 -> (X(x2))),“Red’ : x1; “Yellow” : x2;
 Something good will eventually happen,F(x1),“Something good” : x1
 Both traffic lights are infinitely often green,G(F(x1)) & G(F(x2)),“Traffic light is green1” : x1; “Traffic light is green2” : x2
 Every process that is enabled infinitely often gets its turn infinitely often,G(F(x1)) -> G(F(x2)),“Every process enabled” : x1; “Every process get turn” : x2
@@ -15,14 +15,14 @@ Each traffic light is green infinitely often,G(F(x1))&G(F(x2)),“Traffic light 
 Every process that requests access to the critical section will eventually be able to do so,G(x1 -> x2),"""Process requests access” : x1; ""Process is in its critical section” : x2"
 A should never occur,G(!x1),A : x1
 A should occur exactly once,F(x1 & G(X(!x1))),A : x1
-A and B alternate infinitely often,G(F(x1)) & G(F(x2) &  G(X1 -> X(!x1 U x2)) & G (x2 -> X(!x2 U x1)),A : x1; B : x2
+A and B alternate infinitely often,G(F(x1)) & G(F(x2)) &  G(X1 -> X(!x1 U x2)) & G (x2 -> X(!x2 U x1)),A : x1; B : x2
 A should eventually be followed by B,G(x1 -> F(x2)),A : x1; B : x2
 "Whenever the input x is continuously high, then the output y is infinitely often high",G(G(x1)->G(F(x2))),x : x1; y : x2
 "Whenever currently r2=0, then it will never be the case that after the next input r1=1",G(x1-> X(!(x2))),“r2=0” : x1; “r1=1” : x2
 It is never the case that two successive outputs are high. ,G!(x1 & X(x1)),“Output is high” : x1
 The configuration with x=1 and r1=0 never occurs.,G(!(x1&x2)),“x=1” : x1; “r1=0” : x2
 The car stops once the driver pushes the brake,G(x2 -> F(x1)),“Car stops” : x1; “Push car brakes” : x2
-The message is received after it has been sent,G(x2 - > F(x1)),“Message received” : x1; “Message has been sent” : x2
+The message is received after it has been sent,G(x2 -> F(x1)),“Message received” : x1; “Message has been sent” : x2
 "Once red, the light cannot become green immediately",G(x1 -> X(!x2)),“Red” : x1; “Green” : x2
 "once red, the light always becomes green eventually after being yellow for some time",G(x1 -> (x1 U (x2 & (x2 U x3)))),“Red” : x1; “Yellow” : x2; “Green” : x3
 every request will eventually lead to a response,G (x1 -> F(x2)),“Request” : x1; “Response” : x2
@@ -44,10 +44,10 @@ Again and again the elevator returns to floor 0,G(F(x1)),“Elevator At floor 0�
 "When the top floor is requested, the elevator serves it immediately and does not stop on the way there.",G(x1->X(x2 & G(!x3))),“Requested at Top Floor” : x1 ; “Served at Top Floor” : x2 ; “Stops Until Top Floor” : x3
 "at the next time where x1 holds, x2 also holds",G(x1->X(x2)),x1 : x1 ; x2 : x2
 x2 holds as least as long as x1 does.,G (x1 -> (x1 U (!x1 | x2))),x1 : x1 ; x2 : x2
-"if x1 holds sometime, x2 does so before",F(x1) -> (!x1 U x2),x1 : x1 ; x2 : x2
+"if x1 holds sometime, x2 does so before",F(x1) -> ((!(x1)) U x2),x1 : x1 ; x2 : x2
 "Whenever some process is in the inner sanctum, no process is at location l4.",G(x1 -> !x2),“Process In Inner Sanctum” x1 ; “Process At l4“ : x2
 "if all reliable processes have the same initial value, then their final value is the same as their common initial value.",G (x1 -> F(x2)),"""All reliable processes have the same initial value” : x1 ; ”All reliable processes have the same final value, which is equal to the initial value” : x2"
-each red light phase is preceded by a yellow light phase,G (x1 -> Y(x2)),"""The light is red” : x1 ; ”The light is yellow” : x2"
+each red light phase is preceded by a yellow light phase,G (x1 -> X(x2)),"""The light is red” : x1 ; ”The light is yellow” : x2"
 the traffic light is infinitely often green,G(F(x1)),"""The light is green” : x1"
 every request will eventually be granted,G (x1 -> F(x2)),"“A request is made” : x1 ; ""The request is granted” : x2"
 Possibly the system never goes down,F(G(!x1)),"""The system is down” : x1"
@@ -67,7 +67,7 @@ If a cancel request is sent to the bank by the customer then the bank restores t
 It is not the case that John is home,!x1,"""John is home” : x1"
 "If the pressurizer water level rises above l0, then the reactor shall be tripped (i.e., shut down) on the next cycle at latest.",G(x1 -> (X(x2) |x2)),"""The pressurizer water level rises above l0” : x1 ; “The reactor is tripped” : x2"
 "If steam pressures in either of the steam generators exceed the mean pressure by Δp and emergency feedwater lines are not closed, then the corresponding valve closing signals shall be generated",G((x1 & !x2) -> x3),"""Steam pressures exceed the mean pressure by Δp” : x1 ; “Emergency feedwater lines are closed” : x2 ; ""Valve closing signals are generated” : x3"
-"In the second moment in time, hot will be true.",X(X(x1),"""Hot is true” : x1"
+"In the second moment in time, hot will be true.",X(X(x1)),"""Hot is true” : x1"
 "There is a moment in the future where either 'pink' is always true, or 'brown' is true in the next moment in time.",F(G(x1) | X(x2)),"""Pink is true” : x1 ;  ""Brown is true” : x2"
 "In the next moment in time, 'running' will be true and, at some time after that, 'terminated' will be true",X(x1 & F(x2)),"""Running is true” :  x1 ; “Terminated is true” : x2"
 "It is always the case that, if either have_passport or have_ticket is false, then, in the next moment in time board_fight will also be false",G((!x1 | !x2) -> X !x3),"""Have passport is true” : x1 ;  ""Have ticket is true” : x2 ; “Board flight is true” : x3"
@@ -84,7 +84,7 @@ Printing for processes 'a' and 'b' can never occur simultaneously,G!(x1 & x2),""
 "If a process makes a print request infinitely often, then printing for that process will occur infinitely often",G(F(x1))-> G(F(x2)),"""A process makes a print request” : x1 ; ""Printing for that process occurs” : x2"
 "If, whenever I am happy, I will certainly be happy on the next day, then, if I am happy now, then I will always be happy in the future.",G (x1 -> X(x1)) -> (x1 -> G(x1)),"""I am happy” : x1"
 "If it is always the case that when it rains it pours then, if it always rains, it always pours.",G(x1 -> x2) -> (G(x1) -> G(x2)),"""It rains” : x1 ; ”It pours” : x2"
-"If, from the beginning, the sky is always pink, then the sky will be pink whenever it is examined in the future.",G(x1 -> G (x2 -> x1),"""The sky is pink” : x1 ; ""The sky is examined” : x2"
+"If, from the beginning, the sky is always pink, then the sky will be pink whenever it is examined in the future.",G(x1 -> G (x2 -> x1)),"""The sky is pink” : x1 ; ""The sky is examined” : x2"
 If it is always dark then it is not the case that it is sometimes light,G(x1 -> !F(x2)),"""It is dark” : x1 ; ""It is light” : x2"
 "tomorrow I will be both happy and hungry if, and only if, both tomorrow I will be happy and tomorrow I will hungry.",X(x1 & x2) <-> (X(x1) & X(x2)),"""I am happy” : x1 ; ""I am hungry” : x2"
 "If I am sleeping from now up until the time the alarm goes off and continue sleeping up until my doorbell rings, then I am sleeping from now up until the time my doorbell rings",((x1 U x2) & (x1 U x3)) -> (x1 U x3),"“I am sleeping” : x1 ; ""The alarm goes off” : x2 ; ”The doorbell rings” : x3"
