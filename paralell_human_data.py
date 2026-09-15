@@ -231,7 +231,7 @@ def seed_experiments(data_points, prompt_types, temperatures):
                 WHERE original_NL IS NULL 
                 OR TRIM(original_NL) = '';
             """)
-            conn.execute("COMMIT")
+
         print("Cleared rows with empty requirements.")
         
         for dp, pt, temp in itertools.product(data_points, prompt_types, temperatures):
