@@ -120,10 +120,8 @@ Both Min and Henry are home given that exactly one is.,((x1 & !x2) | (!x1 & x2))
 Exactly one in home given that at least one is.,(x1 | x2) -> ((x1 & !x2) | (!x1 & x2)),"""Min is home” : x1 ;  ""Henry is home” :  x2"
 Either min is home or she and Hen are not both home ,X1 | !(x1 & x2),"""Min is home” : x1 ;  ""Henry is home” :  x2"
 Either min is home or she and Hen are both not home ,X1 | (!x1 & !x2),"""Min is home” : x1 ;  ""Henry is home” :  x2"
-Max is home if and only if Claire is at the library,"x1 <-> x2
-","""Max is home” : x1; ""Claire is at the library” : x2"
-Claire is at the library unless Max is home,"x2 <-> !x1
-","""Max is home” : x1; ""Claire is at the library” : x2"
+Max is home if and only if Claire is at the library,"x1 <-> x2","""Max is home” : x1; ""Claire is at the library” : x2"
+Claire is at the library unless Max is home,"x2 <-> !x1","""Max is home” : x1; ""Claire is at the library” : x2"
 If Claire gave Folly to Max at 2:03 then Folly belonged to her at 2:00 and to him at 2:05.,x2 -> (x1 & x3),"""Folly belonged to Claire at 2:00” :  x1 ; ""Claire gave Folly to Max at 2:03” : x2 ; ""Folly belonged to Max at 2:05” :  x3"
 "Max fed Folly at 2:00 pm, but if he gave her to Claire then, Folly was not hungry five minutes later.",x1 ∧ (x2 -> !x3),"""Max fed Folly at 2:00 pm” :  x1 ; ""Max gave Folly to Claire” : x2 ; ""Folly was not hungry at 2:05 pm” : x3"
 "If neither Max nor Claire fed Folly at 2:00, then she was hungry.",(!x1 & !x2) -> x3,"""Max fed Folly at 2:00 pm” : x1 ; ""Claire fed Folly at 2:00 pm” : x2; ""Folly was hungry” : x3"
@@ -141,8 +139,7 @@ You can have dessert only if you eat all your lima beans,x2 -> x1,“Have desser
 "The unicorn, if horned, is elusive and magical, but if not horned, it is neither.",(x1 -> (x2 & x3)) & (!x1 -> !x2 & !x3),"""The unicorn is horned” : x1 ; ""The unicorn is a elusive” :  x2 ; ""The unicorn is magical” : x3"
 "If the unicorn is not horned, it is not mythical.",!x1 -> !x2,"""The unicorn is horned” : x1 ; ""The unicorn is a mythical” :  x2"
 The unicorn is horned if and only if magical or mythical.,x1 <-> (x2 | x3),"""The unicorn is horned” : x1 ; ""The unicorn is magical” : x2 ; ""The unicorn is a mythical” :  x3"
-"It is not necessary—no, nor so much as convenient—that the legislative should be always in being; but absolutely necessary that the executive power should, because there is not always need of new laws to be made, but always need of execution of the laws that are made.",(!G x1) & (G x2) & (!G x3) ∧ (G x4),"""The legislative power is in being (active)” : x1 ; ""The executive power is in being (active)” :  x2 ; ""There is a need for new laws to be made” : x3 ; ""There is a need for execution of existing laws” : x4
-"
+"It is not necessary—no, nor so much as convenient—that the legislative should be always in being; but absolutely necessary that the executive power should, because there is not always need of new laws to be made, but always need of execution of the laws that are made.",(!G x1) & (G x2) & (!G x3) ∧ (G x4),"""The legislative power is in being (active)” : x1 ; ""The executive power is in being (active)” :  x2 ; ""There is a need for new laws to be made” : x3 ; ""There is a need for execution of existing laws” : x4"
 it eventually holds that if x1 is true then x2 is true thereafter,F(x1 -> G(x2)),"x1 : x1 , x2 : x2"
 "whenever x1 is true, it becomes false in the next state and true again in the state after that",G(x1 -> (X(!x1) & X(X(x1)))),x1 : x1
 x1 is true sometime after 4 or more transitions,X(X(X(X(F(x1))))),x1 : x1
