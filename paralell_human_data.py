@@ -225,18 +225,28 @@ def seed_experiments(data_points, prompt_types, temperatures):
     with get_db_connection() as conn:
         conn.execute("BEGIN")
         
+        with get_db_connection() as conn:
+            conn.execute("""
+                DELETE FROM experiments 
+                WHERE original_NL IS NULL 
+                OR TRIM(original_NL) = '';
+            """)
+            conn.commit()
+        print("Cleared rows with empty requirements.")
+        
         for dp, pt, temp in itertools.product(data_points, prompt_types, temperatures):
             # Safe parsing from CSV keys
             exp_idx = int(dp['experiment_index'])
             exp_idx = int(dp['experiment_index'])
             orig_nl = dp.get('Requirement', '')
             orig_ltl = dp.get('Ground Truth', '')
+            aps = dp.get('Atomic Proposition', '')
             try:
                 spot_ltl = str(spot.formula(orig_ltl))
             except Exception as e:
                 print(f"Error occurred while processing Spot_LTL for experiment {exp_idx}: {e}")
                 spot_ltl = ''
-            aps = dp.get('Atomic Proposition', '')
+            
             
 
             conn.execute('''
