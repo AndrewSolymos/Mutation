@@ -44,7 +44,7 @@ Again and again the elevator returns to floor 0,G(F(x1)),“Elevator At floor 0�
 "When the top floor is requested, the elevator serves it immediately and does not stop on the way there.",G(x1->X(x2 & G(!x3))),“Requested at Top Floor” : x1 ; “Served at Top Floor” : x2 ; “Stops Until Top Floor” : x3
 "at the next time where x1 holds, x2 also holds",G(x1->X(x2)),x1 : x1 ; x2 : x2
 x2 holds as least as long as x1 does.,G (x1 -> (x1 U (!x1 | x2))),x1 : x1 ; x2 : x2
-"if x1 holds sometime, x2 does so before",F(x1) -> ((!(x1)) U x2),x1 : x1 ; x2 : x2
+"if x1 holds sometime, x2 does so before",F(x1) -> (!x1 U x2),x1 : x1 ; x2 : x2
 "Whenever some process is in the inner sanctum, no process is at location l4.",G(x1 -> !x2),“Process In Inner Sanctum” x1 ; “Process At l4“ : x2
 "if all reliable processes have the same initial value, then their final value is the same as their common initial value.",G (x1 -> F(x2)),"""All reliable processes have the same initial value” : x1 ; ”All reliable processes have the same final value, which is equal to the initial value” : x2"
 each red light phase is preceded by a yellow light phase,G (x1 -> X(x2)),"""The light is red” : x1 ; ”The light is yellow” : x2"
