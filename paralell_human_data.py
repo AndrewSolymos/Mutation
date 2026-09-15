@@ -256,7 +256,7 @@ def seed_experiments(data_points, prompt_types, temperatures):
             ''', (orig_nl, orig_ltl, spot_ltl, aps, pt, temp, exp_idx))
         try:  
             conn.execute("COMMIT")
-        except sys.exception as e:
+        except Exception as e:
             print(f"Error during commit: {e}")
 
     print("✅ Database seeded with task combinations.")
