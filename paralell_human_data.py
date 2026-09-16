@@ -394,7 +394,8 @@ if __name__ == '__main__':
             for row in csv_reader:
                 row['experiment_index'] = int(csv_reader.line_num)  # Ensure the index is an integer
                 data_points.append(row)
-
+            print(f"Loaded {csv_reader.line_num} rows from {fajl}.")
+    print(f"Loaded {len(data_points)} data points from CSV files.")
     prompt_types = ["BASIC", "ARTEMIS", "ADARULE"]
     temperatures = [0.4]
     
