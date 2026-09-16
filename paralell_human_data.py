@@ -105,7 +105,7 @@ So the final LTL translation is: [LTL formula].FINISH
 
 model = "google/gemma-4-31B-it"
 # model = "Qwen/Qwen3.5-27B"
-DB_PATH = "human_data_gemma.db"
+DB_PATH = "human_data_gemma_07.db"
 
 
 STALL_TIMEOUT_SECONDS = 600  
@@ -396,7 +396,7 @@ if __name__ == '__main__':
                 data_points.append(row)
 
     prompt_types = ["BASIC", "ARTEMIS", "ADARULE"]
-    temperatures = [0.7]
+    temperatures = [0.4]
     
     print("Initializing Database Seeding...")
     seed_experiments(data_points, prompt_types, temperatures)
